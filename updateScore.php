@@ -8,8 +8,11 @@
     $nhom = $_GET['nhom'];
 
     // $sql = "UPDATE dang_ky SET diem_cc = '".$diem_cc."', diem_gk = '".$diem_gk."', diem_ck  = '".$diem_ck."'  WHERE ma_sv = '".$ma_sv."' AND ma_lop_tc = '".$ma_lop_tc."'";
-
-    $sql = "UPDATE dang_ky SET diem_cc = '".$diem_cc."', diem_gk = '".$diem_gk."', diem_ck  = '".$diem_ck."'  WHERE ma_sv = '".$ma_sv."' AND ma_lop_tc = '".$ma_lop_tc."' AND nhom = '".$nhom."' ";
+    if($diem_gk) {
+        $sql = "UPDATE dang_ky SET diem_cc = '".$diem_cc."', diem_gk = '".$diem_gk."', diem_ck  = '".$diem_ck."'  WHERE ma_sv = '".$ma_sv."' AND ma_lop_tc = '".$ma_lop_tc."' AND nhom = '".$nhom."' ";
+    }else {
+        $sql = "UPDATE dang_ky SET diem_cc = '".$diem_cc."', diem_ck  = '".$diem_ck."'  WHERE ma_sv = '".$ma_sv."' AND ma_lop_tc = '".$ma_lop_tc."' AND nhom = '".$nhom."' ";
+    }
 	$result = sqlsrv_query($conn, $sql , $params, $options);
 
 ?>

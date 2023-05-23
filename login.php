@@ -5,7 +5,7 @@
     $password = $_GET['password'];
         $sql = '';
         if (preg_match('~[0-9]+~', $email)) {
-            $sql = "SELECT ma_sv, ho_ten, ma_lop, ngay_sinh, dia_chi FROM sinh_vien WHERE ma_sv = '".$email."' AND password = '".$password."'";
+            $sql = "SELECT ma_sv, ho_ten, sinh_vien.ma_lop, ngay_sinh, dia_chi, lop.ten_lop, lop.khoa_hoc FROM sinh_vien INNER JOIN lop ON sinh_vien.ma_lop = lop.ma_lop WHERE ma_sv = '".$email."' AND password = '".$password."'";
         }else{
             $sql = "SELECT ma_gv, ho_ten, hoc_vi, giang_vien.ma_khoa, email, dia_chi, ngay_sinh, sdt, khoa.ten_khoa FROM giang_vien INNER JOIN khoa ON giang_vien.ma_khoa = khoa.ma_khoa WHERE email = '".$email."' AND password = '".$password."'";
         }
