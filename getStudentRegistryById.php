@@ -2,7 +2,7 @@
 include 'db.php';
 $ma_sv = $_GET['ma_sv'];
 
-$sql = "SELECT id, dang_ky.ma_lop_tc, lop_tin_chi.ten_mh, lop_tin_chi.so_tin_chi
+$sql = "SELECT id, dang_ky.ma_lop_tc, lop_tin_chi.ten_mh, lop_tin_chi.so_tin_chi, dang_ky.nhom
 FROM dang_ky 
 INNER JOIN lop_tin_chi ON dang_ky.ma_lop_tc = lop_tin_chi.ma_lop_tc
 WHERE ma_sv = '".$ma_sv."' AND trang_thai = 2";

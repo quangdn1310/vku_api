@@ -3,7 +3,7 @@
 // header('Access-Control-Allow-Methods: ')
 // header('Access-Control-Allow-Origin: *')
 
-$serverName = "DQN1310\SERVER";
+$serverName = "DESKTOP-J23PKAN\MSSQLSERVER01";
 $database = "vku";
 $uid = '';
 $pass = '';
